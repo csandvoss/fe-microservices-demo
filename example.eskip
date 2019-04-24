@@ -1,0 +1,11 @@
+tailor: 
+    Path("/ui")
+    -> compress()
+    -> setPath("/ui_1")
+    -> "http://host.docker.internal:8080/";
+
+// Uncomment for demo traffic split
+// tailor_v2:
+//     Traffic(.5) && Path("/ui")
+//     -> setPath("/ui_2")
+//     -> "http://host.docker.internal:8080/";
